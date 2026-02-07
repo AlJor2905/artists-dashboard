@@ -16,8 +16,8 @@ import {
     RevenueChart,
     PlatformBreakdown,
     ReleaseMetricsList,
-    type ReleaseAnalytics,
 } from "@/features/analytics";
+import { type ReleaseAnalytics } from "@/features/analytics/types";
 import {
     monthlySalesData,
     platformBreakdown,
@@ -262,7 +262,7 @@ export default function AnalyticsPage() {
             <ReleaseMetricsList
                 releases={releaseAnalytics}
                 onSelectRelease={handleSelectRelease}
-                selectedReleaseId={selectedRelease ? selectedRelease.releaseId : undefined}
+                selectedReleaseId={selectedRelease ? selectedRelease : undefined}
             />
         </div>
     );

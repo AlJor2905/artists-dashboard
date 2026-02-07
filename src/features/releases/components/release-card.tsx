@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { type Release } from "@/features/releases/types";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -57,9 +59,11 @@ export function ReleaseCard({ release }: ReleaseCardProps) {
         <Card className="group overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1">
             {/* Image Container with Zoom Effect */}
             <div className="relative aspect-square overflow-hidden">
-                <img
+                <Image
                     src={release.artwork}
                     alt={release.title}
+                    width={400}
+                    height={400}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 {/* Overlay on hover */}

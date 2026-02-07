@@ -29,7 +29,7 @@ export function PlatformUsageCard({
             </CardHeader>
             <CardContent>
                 <div className="space-y-4">
-                    {data.map((platform, index) => (
+                    {data.map((platform) => (
                         <div key={platform.platform} className="space-y-2">
                             <div className="flex items-center justify-between">
                                 <div className="flex items-center gap-2">

@@ -4,7 +4,10 @@ import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 
 export const metadata: Metadata = {
-  title: "Artist Dashboard",
+  title: {
+    default: "Artist Dashboard",
+    template: "%s | Artist Dashboard",
+  },
   description: "Track your music releases, sales analytics, and fan engagement",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };

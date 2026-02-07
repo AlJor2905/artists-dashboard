@@ -3,8 +3,12 @@ import {
     type PlatformUsage,
     type EngagementMetrics,
     type ReleaseEngagement,
+    type SocialMediaPlatform,
+    type SocialMediaGrowth,
+    type CrossPlatformData,
+    type GrowthOpportunity,
 } from "@/features/engagement/types";
-import { PLATFORM_COLORS, CHART_COLORS } from "@/lib/chart-colors";
+import { PLATFORM_COLORS } from "@/lib/chart-colors";
 
 export const platformUsage: PlatformUsage[] = [
     { platform: "Spotify", users: 45000, percentage: 42, color: PLATFORM_COLORS.spotify },
@@ -117,14 +121,14 @@ export const releaseEngagements: ReleaseEngagement[] = [
 ];
 
 // Social Media Data
-export const socialMediaPlatforms: import("@/features/engagement/types").SocialMediaPlatform[] = [
+export const socialMediaPlatforms: SocialMediaPlatform[] = [
     { platform: "Instagram", followers: 52000, growth: 18.5, engagementRate: 4.2, color: "#E4405F" },
     { platform: "TikTok", followers: 89000, growth: 45.2, engagementRate: 8.7, color: "#00F2EA" },
     { platform: "Twitter", followers: 28000, growth: 8.3, engagementRate: 2.1, color: "#1DA1F2" },
     { platform: "YouTube", followers: 34000, growth: 12.4, engagementRate: 5.3, color: "#FF0000" },
 ];
 
-export const socialMediaGrowth: import("@/features/engagement/types").SocialMediaGrowth[] = [
+export const socialMediaGrowth: SocialMediaGrowth[] = [
     { month: "Jan", instagram: 38000, tiktok: 45000, twitter: 22000, youtube: 28000 },
     { month: "Feb", instagram: 41000, tiktok: 52000, twitter: 23500, youtube: 29500 },
     { month: "Mar", instagram: 44000, tiktok: 61000, twitter: 24800, youtube: 30800 },
@@ -133,14 +137,14 @@ export const socialMediaGrowth: import("@/features/engagement/types").SocialMedi
     { month: "Jun", instagram: 52000, tiktok: 89000, twitter: 28000, youtube: 34000 },
 ];
 
-export const crossPlatformData: import("@/features/engagement/types").CrossPlatformData[] = [
+export const crossPlatformData: CrossPlatformData[] = [
     { platform: "Spotify", listeners: 45000, socialFollowers: 28000, conversionRate: 62.2, color: PLATFORM_COLORS.spotify },
     { platform: "TikTok", listeners: 12000, socialFollowers: 89000, conversionRate: 13.5, color: "#000000" },
     { platform: "YouTube", listeners: 18000, socialFollowers: 34000, conversionRate: 52.9, color: "#FF0000" },
     { platform: "Instagram", listeners: 8000, socialFollowers: 52000, conversionRate: 15.4, color: "#E4405F" },
 ];
 
-export const growthOpportunities: import("@/features/engagement/types").GrowthOpportunity[] = [
+export const growthOpportunities: GrowthOpportunity[] = [
     {
         platform: "Instagram",
         currentFollowers: 52000,

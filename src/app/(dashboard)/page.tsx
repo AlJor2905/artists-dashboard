@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -64,6 +66,11 @@ const stats = [
         icon: Users,
     },
 ];
+
+export const metadata: Metadata = {
+    title: "Overview",
+    description: "Dashboard overview and key metrics",
+};
 
 export default function DashboardPage() {
     const latestReleases = mockReleases
@@ -135,14 +142,17 @@ export default function DashboardPage() {
                         </CardHeader>
                         <CardContent>
                             <div className="flex items-center gap-4">
-                                <img
-                                    src={
-                                        mockReleases.find((r) => r.id === topRelease.releaseId)
-                                            ?.artwork
-                                    }
-                                    alt={topRelease.releaseTitle}
-                                    className="h-14 w-14 rounded-lg object-cover"
-                                />
+                                <div className="relative h-14 w-14 rounded-lg overflow-hidden">
+                                    <Image
+                                        src={
+                                            mockReleases.find((r) => r.id === topRelease.releaseId)
+                                                ?.artwork || ""
+                                        }
+                                        alt={topRelease.releaseTitle}
+                                        fill
+                                        className="object-cover"
+                                    />
+                                </div>
                                 <div className="flex-1 min-w-0">
                                     <p className="font-semibold truncate">
                                         {topRelease.releaseTitle}
@@ -250,11 +260,14 @@ export default function DashboardPage() {
                             <div className="space-y-4">
                                 {latestReleases.map((release) => (
                                     <div key={release.id} className="flex items-center gap-4">
-                                        <img
-                                            src={release.artwork}
-                                            alt={release.title}
-                                            className="h-12 w-12 rounded-md object-cover"
-                                        />
+                                        <div className="relative h-12 w-12 rounded-md overflow-hidden">
+                                            <Image
+                                                src={release.artwork}
+                                                alt={release.title}
+                                                fill
+                                                className="object-cover"
+                                            />
+                                        </div>
                                         <div className="flex-1 min-w-0">
                                             <p className="font-medium truncate">{release.title}</p>
                                             <p className="text-sm text-muted-foreground">

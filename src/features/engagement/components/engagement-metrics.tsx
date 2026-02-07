@@ -45,7 +45,7 @@ export function EngagementMetricsCards({ metrics }: EngagementMetricsProps) {
                     </CardHeader>
                     <CardContent>
                         <div className="text-2xl font-bold">
-                            {item.format(metrics[item.key] as number)}
+                            {item.format(metrics[item.key])}
                         </div>
                     </CardContent>
                 </Card>

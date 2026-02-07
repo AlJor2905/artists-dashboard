@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ArrowLeft, Music, Share2 } from "lucide-react";
 import {
@@ -64,11 +64,14 @@ export default function EngagementPage() {
 
             {/* Release Header */}
             <div className="flex items-center gap-4">
-                <img
-                    src={selectedRelease.artwork}
-                    alt={selectedRelease.releaseTitle}
-                    className="h-24 w-24 rounded-lg object-cover"
-                />
+                <div className="relative h-24 w-24 rounded-lg overflow-hidden">
+                    <Image
+                        src={selectedRelease.artwork}
+                        alt={selectedRelease.releaseTitle}
+                        fill
+                        className="object-cover"
+                    />
+                </div>
                 <div>
                     <h1 className="text-3xl font-bold">
                         {selectedRelease.releaseTitle}
@@ -138,11 +141,14 @@ export default function EngagementPage() {
                                             className="w-full rounded-lg p-3 text-left transition-colors hover:bg-muted/50"
                                         >
                                             <div className="flex items-center gap-3">
-                                                <img
-                                                    src={release.artwork}
-                                                    alt={release.releaseTitle}
-                                                    className="h-12 w-12 rounded-md object-cover"
-                                                />
+                                                <div className="relative h-12 w-12 rounded-md overflow-hidden">
+                                                    <Image
+                                                        src={release.artwork}
+                                                        alt={release.releaseTitle}
+                                                        fill
+                                                        className="object-cover"
+                                                    />
+                                                </div>
                                                 <div className="flex-1 min-w-0">
                                                     <p className="font-medium truncate">
                                                         {release.releaseTitle}

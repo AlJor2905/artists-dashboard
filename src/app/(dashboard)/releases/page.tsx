@@ -1,7 +1,7 @@
+import type { Metadata } from "next";
 import { ReleaseGrid } from "@/features/releases";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
-    mockReleases,
     getLatestReleases,
     getUpcomingReleases,
     getRecommendedReleases,
@@ -9,11 +9,15 @@ import {
 import { DelayedContent } from "@/components/delayed-content";
 import { ReleasesSkeleton } from "@/components/page-skeletons";
 
+export const metadata: Metadata = {
+    title: "Releases",
+    description: "Manage and track your music releases",
+};
+
 export default function ReleasesPage() {
     const latestReleases = getLatestReleases();
     const upcomingReleases = getUpcomingReleases();
     const recommendedReleases = getRecommendedReleases();
-    const allReleases = mockReleases.filter((r) => !r.isUpcoming);
 
     const content = (
         <div className="mx-auto max-w-[1200px] space-y-8">

@@ -21,7 +21,6 @@ import {
     Mail,
     TrendingUp,
     Menu,
-    X,
 } from "lucide-react";
 
 const navigationItems = [

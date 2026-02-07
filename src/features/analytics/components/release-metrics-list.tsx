@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import Image from "next/image";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -10,7 +11,7 @@ import { ArrowUpRight, ArrowDownRight } from "lucide-react";
 interface ReleaseMetricsListProps {
     releases: ReleaseAnalytics[];
     onSelectRelease?: (release: ReleaseAnalytics) => void;
-    selectedReleaseId?: string;
+    selectedReleaseId?: ReleaseAnalytics | undefined;
 }
 
 function formatNumber(num: number): string {
@@ -49,17 +50,20 @@ export function ReleaseMetricsList({
                             <button
                                 key={release.releaseId}
                                 onClick={() => onSelectRelease?.(release)}
-                                className={`w-full rounded-lg p-3 text-left transition-colors hover:bg-muted/50 ${selectedReleaseId === release.releaseId
-                                        ? "bg-muted border border-primary/30"
-                                        : ""
+                                className={`w-full rounded-lg p-3 text-left transition-colors hover:bg-muted/50 ${selectedReleaseId?.releaseId === release.releaseId
+                                    ? "bg-muted border border-primary/30"
+                                    : ""
                                     }`}
                             >
                                 <div className="flex items-center gap-3">
-                                    <img
-                                        src={release.artwork}
-                                        alt={release.releaseTitle}
-                                        className="h-12 w-12 rounded-md object-cover"
-                                    />
+                                    <div className="relative h-12 w-12 rounded-md overflow-hidden">
+                                        <Image
+                                            src={release.artwork}
+                                            alt={release.releaseTitle}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                    </div>
                                     <div className="flex-1 min-w-0">
                                         <div className="flex items-center gap-2">
                                             <p className="font-medium truncate">
