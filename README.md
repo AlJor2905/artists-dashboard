@@ -2,6 +2,9 @@
 
 An analytics and management dashboard for artists to track releases, engagement, and revenue across multiple platforms. This project is built with modern web technologies to ensure high performance, accessibility, and a premium user experience.
 
+## You can try it out at:
+https://artists-dashboard-wheat.vercel.app/
+
 ## Tech Stack
 
 - **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
