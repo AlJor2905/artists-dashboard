@@ -4,12 +4,6 @@ export interface AgeGroup {
     percentage: number;
 }
 
-export interface Demographics {
-    releaseId: string;
-    releaseTitle: string;
-    ageGroups: AgeGroup[];
-}
-
 export interface PlatformUsage {
     platform: string;
     users: number;

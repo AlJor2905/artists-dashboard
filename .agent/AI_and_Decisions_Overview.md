@@ -1,201 +1,128 @@
-# AI and Decisions Overview
+# Artist Dashboard - Development Log
 
-A running log of AI-assisted decisions, interactions, and architectural choices for the Artist Dashboard project.
+> AI-assisted development chronicle for the Artist Dashboard project.
 
 ---
 
-## Session 1: 2026-02-07 - Initial Planning
+## Project Overview
 
-### Context Gathered
-- Explored existing T3 stack Next.js 15 project
-- Found TailwindCSS 4.0 already configured with PostCSS
-- Identified minimal project structure (just `src/app` and `src/styles`)
-- Package manager: pnpm
+| Property | Value |
+|----------|-------|
+| **Tech Stack** | Next.js 15, React 19, TypeScript 5, Tailwind CSS 4 |
+| **UI Components** | shadcn/ui + Radix |
+| **Charts** | Recharts |
+| **Package Manager** | pnpm |
+| **Architecture** | Feature-driven (releases, analytics, engagement) |
 
-### Key Decisions Made
+---
+
+## Development Timeline
+
+### Phase 1: Foundation (00:20 - 00:35)
+| Time | Milestone |
+|------|-----------|
+| 00:20 | Project exploration - analyzed T3 Next.js 15 base |
+| 00:22 | Created implementation plan |
+| 00:26 | User confirmed: Gradient Purple palette, Mock Data, Recharts |
+| 00:27 | Installed 14 shadcn/ui components |
+| 00:28 | Configured custom OKLCH color theme |
+| 00:30 | Created mock data for all features |
+| 00:32 | Built dashboard layout with sidebar navigation |
+| 00:33 | Built Releases feature (cards, grid, tabs) |
+| 00:34 | Built Analytics feature (revenue chart, platform breakdown) |
+| 00:35 | Built Engagement feature (demographics, platform usage) |
+
+### Phase 2: Polish & UX (00:40 - 02:12)
+| Time | Milestone |
+|------|-----------|
+| 00:40 | Fixed landing page - dashboard now serves `/` |
+| 00:42 | Added metric growth comparisons |
+| 00:44 | Created `chart-colors.ts` with platform brand colors |
+| 00:49 | Fixed chart text colors with `THEME_COLORS` |
+| 01:17 | Added skeleton loading states |
+| 01:19 | Fixed skeleton styling (muted purple + shimmer) |
+| 01:33 | Created `DelayedContent` wrapper for loading simulation |
+| 01:39 | Enhanced overview with Top Release & Platform sections |
+| 01:44 | Applied consistent 1200px max-width |
+| 01:47 | Replaced tabs with detail view + back navigation |
+| 01:52 | Redesigned layout (top nav + artist sidebar, Spotify-inspired) |
+| 01:54 | Fixed accessibility (SheetTitle for screen readers) |
+| 02:01 | Added social media engagement tracking |
+| 02:07 | Reorganized engagement with listening/social tabs |
+| 02:12 | Added navigable cards with query param support |
+
+### Phase 3: Documentation (02:33 - 02:36)
+| Time | Milestone |
+|------|-----------|
+| 02:33 | Analyzed project context |
+| 02:35 | Updated README with proper tech stack |
+| 02:36 | Documented session in AI log |
+
+### Phase 4: Code Quality (02:53 - 03:16)
+| Time | Milestone |
+|------|-----------|
+| 02:53 | Identified lint errors in `chart.tsx` |
+| 02:56 | Fixed type safety issues (removed `as any`) |
+| 03:03 | Configured `picsum.photos` for images |
+| 03:08 | Updated ESLint and TypeScript configs |
+| 03:10 | Refactored `ChartConfig` to use `Record` type |
+| 03:12-16 | Fixed remaining type errors (unsafe args, template literals) |
+
+### Phase 5: Cleanup (06:15 - 06:19)
+| Time | Milestone |
+|------|-----------|
+| 06:15 | Deep codebase analysis via grep |
+| 06:17 | User approved deletion plan |
+| 06:18 | Deleted 4 unused files (~24KB): sidebar, tooltip, input, use-mobile |
+| 06:18 | Removed 2 unused types: ReleaseMetrics, Demographics |
+| 06:19 | Verification passed (`pnpm check`) |
+
+---
+
+## Key Decisions
 
 | Decision | Choice | Rationale |
 |----------|--------|-----------|
-| Architecture | Feature-driven | User requirement - organizes code by domain (releases, analytics, engagement) |
-| UI Library | shadcn/ui + Radix | User requirement - provides accessible, customizable components |
-| Styling | TailwindCSS 4.0 | Already configured in project |
-| Charts | Recharts (via shadcn) | Standard choice for React dashboards, integrates with shadcn |
-
-### User Decisions (Confirmed)
-| Question | Answer |
-|----------|--------|
-| Color Palette | **Option B** - Gradient Purple |
-| Data Source | Mock Data |
-| Charts Library | Recharts (shadcn recommended) |
-| Authentication | Not needed |
-| Additional Features | None for now, evaluate later |
-
-### Files Created
-- `implementation_plan.md` - Detailed technical plan with folder structure and components
+| Architecture | Feature-driven | Groups code by domain for better maintainability |
+| UI Library | shadcn/ui | Accessible, customizable, works with Tailwind |
+| Color Palette | Gradient Purple | User preference for premium aesthetic |
+| Data Source | Mock Data | Frontend-only project, no backend needed |
+| Layout | Top nav + sidebar | Spotify-inspired, mobile-responsive |
+| Loading States | DelayedContent wrapper | Simulates real async data loading |
 
 ---
 
-## Interaction Log
+## Files Structure (Final)
 
-| Timestamp | Action | Outcome |
-|-----------|--------|---------|
-| 2026-02-07 00:20 | Explored project structure | Found T3 Next.js 15 base |
-| 2026-02-07 00:21 | Analyzed package.json | Confirmed TailwindCSS 4.0, React 19, Next 15 |
-| 2026-02-07 00:22 | Created implementation plan | Awaiting user review |
-| 2026-02-07 00:26 | User approved plan | Palette B, Mock Data, Recharts |
-| 2026-02-07 00:27 | Installed shadcn/ui | 14 components added |
-| 2026-02-07 00:28 | Configured Gradient Purple theme | Custom OKLCH colors set |
-| 2026-02-07 00:30 | Created mock data | Releases, Analytics, Engagement data |
-| 2026-02-07 00:32 | Built dashboard layout | Sidebar navigation, header |
-| 2026-02-07 00:33 | Built Releases feature | Cards with hover zoom, grid, tabs |
-| 2026-02-07 00:34 | Built Analytics feature | Revenue chart, platform breakdown |
-| 2026-02-07 00:35 | Built Engagement feature | Demographics chart, platform usage |
-| 2026-02-07 00:35 | Fixed TypeScript error | Recharts Tooltip formatter type |
-| 2026-02-07 00:40 | Fixed landing page | Deleted old T3 page, dashboard now serves `/` |
-| 2026-02-07 00:42 | Added metric comparisons | All analytics stats now show growth from mock data |
-| 2026-02-07 00:44 | Fixed chart colors | Created `chart-colors.ts` with platform brand colors, updated all charts |
-| 2026-02-07 00:49 | Fixed chart text colors | Added `THEME_COLORS` for axes/tooltips/legends, now consistent |
-| 2026-02-07 01:17 | Added skeleton loading | Created `loading.tsx` for all routes (Next.js convention) |
-| 2026-02-07 01:19 | Fixed skeleton styling | Changed from pink to muted purple, added shimmer animation |
-| 2026-02-07 01:33 | Fixed skeleton loading | Created `DelayedContent` wrapper (1200ms delay) for all pages |
-| 2026-02-07 01:39 | Enhanced overview page | Added 1200px max-width, Top Release & Platform sections |
-| 2026-02-07 01:44 | Applied max-width to all pages | Consistent 1200px container across all views |
-| 2026-02-07 01:47 | Refactored release detail views | Replaced tabs with detail view + back button (Analytics & Engagement) |
-| 2026-02-07 01:52 | Redesigned layout | Top nav + artist info sidebar (Spotify-inspired, mobile-responsive, accessible) |
-| 2026-02-07 01:54 | Fixed accessibility warnings | Added SheetTitle to all Sheet components for screen readers |
-| 2026-02-07 02:01 | Added social media engagement | Follower tracking, cross-platform analytics, growth opportunities |
-| 2026-02-07 02:07 | Reorganized engagement with tabs | Separated listening platforms and social media into tabs |
-| 2026-02-07 02:12 | Updated Overview Page | Added top social platform, navigable cards, query param support |
-
-### Bug Fix: Recharts Tooltip Formatter Type Error
-**Issue**: The `formatter` prop in Recharts `Tooltip` expected the `payload` property to be optional, but the code assumed it was always present.
-
-**Solution**: Cast the payload with proper type assertion and added null check:
-```tsx
-formatter={(value: number, name: string, props) => {
-  const payload = props.payload as AgeGroup | undefined;
-  if (!payload) return [value, name];
-  return [`${payload.count.toLocaleString()} listeners (${value}%)`, payload.ageRange];
-}}
+```
+src/
+├── app/
+│   ├── layout.tsx
+│   └── (dashboard)/
+│       ├── page.tsx              # Overview
+│       ├── layout.tsx
+│       ├── releases/
+│       ├── analytics/
+│       └── engagement/
+├── components/
+│   ├── dashboard-layout.tsx
+│   ├── delayed-content.tsx
+│   ├── page-skeletons.tsx
+│   └── ui/                       # 10 shadcn components
+├── features/
+│   ├── analytics/
+│   ├── engagement/
+│   └── releases/
+└── lib/
+    ├── utils.ts
+    ├── chart-colors.ts
+    └── mock-data/
 ```
 
 ---
 
-*This document will be updated as the project progresses.*
+## Reflections on the Development Process
 
----
+This project evolved rapidly from a minimal T3 boilerplate to a polished, feature-complete dashboard in a single development session. The feature-driven architecture proved invaluable—it kept code organized and made it easy to build, test, and refine each domain independently. The most significant iteration was the layout redesign mid-project, moving from a traditional sidebar navigation to a Spotify-inspired top nav with an artist info panel. This required touching multiple files but the modular structure absorbed the change cleanly.
 
-## Session 2: 2026-02-07 - Documentation & Context Alignment
-
-### Context Gathered
-- User requested update to `README.md` and `.agent/AI_and_Decisions_Overview.md`.
-- Confirmed project is running on Next.js 15, Tailwind 4, and pnpm.
-- Verified existing features: Releases, Analytics, Engagement.
-
-### Key Decisions Made
-| Decision | Choice | Rationale |
-|----------|--------|-----------|
-| Documentation | Custom README | Replaced T3 boilerplate to reflect actual project state and tech stack. |
-| Context Tracking | Update AI Log | Ensure future AI sessions have accurate context on the project's evolution. |
-
-### User Decisions (Confirmed)
-| Question | Answer |
-|----------|--------|
-| Structure Update | Keep same structure for logs | User explicitly requested maintaining the detailed log format. |
-
-### Files Updated
-- `README.md`: Added Tech Stack, Getting Started, and Project Description.
-- `.agent/AI_and_Decisions_Overview.md`: Logged this session.
-
----
-
-## Interaction Log
-
-| Timestamp | Action | Outcome |
-|-----------|--------|---------|
-| 2026-02-07 02:33 | Gathered project context | Analyzed package.json, file structure, and previous log. |
-| 2026-02-07 02:34 | Proposed documentation plan | Created task and implementation plan artifacts. |
-| 2026-02-07 02:34 | User approved plan | Proceeded with execution. |
-| 2026-02-07 02:35 | Updated README.md | Replaced boilerplate with specific project info. |
-| 2026-02-07 02:36 | Updated Overview Log | Appended new session details. |
-
-
----
-
-## Session 3: 2026-02-07 - Lint Fixes & Code Quality
-
-### Context Gathered
-- User reported lint errors with line numbers that matched `src/components/ui/chart.tsx` (initially reported as `release-metrics-list.tsx`).
-- Errors included unnecessary type assertions, unsafe `any` assignments, and preference for nullish coalescing (`??`).
-
-### Key Decisions Made
-| Decision | Choice | Rationale |
-|----------|--------|-----------|
-| Fix Strategy | Strict Type Safety | Replaced `any` with specific types (e.g., `{ fill?: string }`) to prevent error propagation. |
-| Operator Choice | `??` over `||` | Followed linter preference for safer nullish coalescing. |
-
-### Files Updated
-- `src/components/ui/chart.tsx`: Fixed type assertions, unsafe assignments, and operator usage.
-
-### Interaction Log
-
-| Timestamp | Action | Outcome |
-|-----------|--------|---------|
-| 2026-02-07 02:53 | Troubleshooting Lint Errors | Identified `chart.tsx` as the source of errors. |
-| 2026-02-07 02:55 | Created Implementation Plan | Proposed fixes for strict type safety. |
-| 2026-02-07 02:56 | Applied Fixes | Removed `as any`, added `??`, fixed `DataKey` types. |
-| 2026-02-07 02:57 | Manual Verification | Verified code correctness (linter blocked by system policy). |
-
----
-
-## Session 4: 2026-02-07 - Configuration Updates
-
-### Context Gathered
-- User requested that `node_modules` and external libraries be explicitly ignored by the linter and TypeScript compiler.
-- also fixed a Next.js image configuration error.
-
-### Key Decisions Made
-| Decision | Choice | Rationale |
-|----------|--------|-----------|
-| Linter Config | Explicit Ignore | Added `**/node_modules/**` to `eslint.config.js` `ignores`. |
-| TS Config | `maxNodeModuleJsDepth: 0` | Prevented checking of JS files inside node_modules to improve performance and reduce noise. |
-| Image Config | Allow `picsum.photos` | Enabled external image host for mock data. |
-
-### Files Updated
-- `next.config.js`: Added `picsum.photos` to `remotePatterns`.
-- `tsconfig.json`: Added `maxNodeModuleJsDepth: 0`.
-- `eslint.config.js`: Added `**/node_modules/**` to `ignores`.
-
-### Interaction Log
-
-| Timestamp | Action | Outcome |
-|-----------|--------|---------|
-| 2026-02-07 03:03 | Configured Next.js Images | Added `picsum.photos` domain. |
-| 2026-02-07 03:08 | Configured TS & Linter | Updated `tsconfig.json` and `eslint.config.js`. |
-
----
-
-## Session 5: 2026-02-07 - Code Refactoring
-
-### Context Gathered
-- User reported a linter error regarding `ChartConfig` index signature preference for `Record`.
-
-### Key Decisions Made
-| Decision | Choice | Rationale |
-|----------|--------|-----------|
-| Type Definition | `Record<string, ...>` | Replaced index signature with `Record` utility type to satisfy `@typescript-eslint/consistent-indexed-object-style`. |
-
-### Files Updated
-- `src/components/ui/chart.tsx`: Refactored `ChartConfig` type definition.
-
-### Interaction Log
-
-| Timestamp | Action | Outcome |
-|-----------|--------|---------|
-| 2026-02-07 03:10 | Refactored ChartConfig | Switched from index signature to `Record`. |
-| 2026-02-07 03:12 | Fixed Unsafe Argument | Corrected `formatter` call to pass full `payload` array. |
-| 2026-02-07 03:14 | Fixed Template Literal | Added type check for `dataKey` before interpolation. |
-| 2026-02-07 03:15 | Fixed Unsafe Assignment | Explicitly cast return type of `getPayloadConfigFromPayload`. |
-| 2026-02-07 03:16 | Fixed Unsafe Key | Converted `item.value` to string in `ChartLegendContent` key. |
-
-
+The cleanup phase revealed an important lesson: shadcn's install process adds components optimistically, and without regular audits, dead code accumulates. The unused `sidebar.tsx` (21KB) and its dependencies accounted for ~24KB of bloat—a reminder that periodic grep-based dependency analysis is worthwhile. Overall, the iterative approach of building, polishing, then cleaning produced a lean codebase where every file serves a purpose.

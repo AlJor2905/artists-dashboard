@@ -12,10 +12,3 @@ export interface Release {
     revenue: number;
     isUpcoming?: boolean;
 }
-
-export interface ReleaseMetrics {
-    totalStreams: number;
-    totalSales: number;
-    totalRevenue: number;
-    monthlyGrowth: number;
-}
