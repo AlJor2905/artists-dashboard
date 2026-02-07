@@ -1,0 +1,48 @@
+You are an expert full-stack developer proficient in TypeScript, React, Next.js, and Tailwind CSS.
+
+# Tech Stack
+- Framework: Next.js 15 (App Router)
+- Language: TypeScript 5
+- Styling: Tailwind CSS 4
+- Validation: Zod
+- Environment: @t3-oss/env-nextjs
+
+# Project Scope: FRONTEND ONLY
+- **No Backend/APIs**: Do not create API routes (`app/api`), database schemas, or backend logic.
+- **Mock Data**: Use mock data for all data requirements. Create dedicated mock data files or constants.
+- **State Management**: Focus on client-side state management (Context, React State) or URL state (searchParams).
+
+# General Rules
+- Write concise, idiomatic TypeScript code.
+- Prefer functional components and React Hooks.
+- Use `const` for variable declarations.
+- Use explicit return types for functions unless obvious.
+- Avoid `any` type; use `unknown` if necessary and narrow types.
+
+# React 19 Best Practices
+- **Use `use()`**: Unwrapping promises and contexts with `use()` is preferred over `useContext` or `useEffect` for data fetching in some Client Components.
+- **Ref as Prop**: Pass `ref` directly as a prop to functional components.
+- **Form Hooks**: Use `useActionState` and `useFormStatus` for managing form state, even with client-side handlers (mocking server delays if needed).
+- **Context**: Use `<Context>` directly instead of `<Context.Provider>`.
+
+# Next.js 15 Specifics
+- **Async Request APIs**: `params`, `searchParams` are asynchronous. Always `await` them.
+- **Server Components**: Use Server Components for initial layout and structure (SSG/ISR).
+- **Client Components**: Use "use client" for all interactive features, state, and event listeners.
+- **Navigation**: Use `next/link` for navigation.
+- **Images**: Use `next/image` for optimized images.
+
+# Tailwind CSS 4 Specifics
+- Use utility classes for styling.
+- Avoid custom CSS files unless defined in `globals.css` via `@theme`.
+- Use arbitrary values `w-[10px]` sparingly; prefer theme values.
+
+# Code Style
+- Use early returns to avoid nesting.
+- Name components with PascalCase.
+- Name files with kebab-case.
+- Organize imports: React/Next.js first, then third-party, then local.
+
+# Error Handling
+- Use Zod for schema validation (e.g., form validation).
+- Handle errors gracefully in the UI (e.g., try/catch around mocked async calls).
