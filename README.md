@@ -1,29 +1,45 @@
-# Create T3 App
+# Artist Dashboard
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+An analytics and management dashboard for artists to track releases, engagement, and revenue across multiple platforms. This project is built with modern web technologies to ensure high performance, accessibility, and a premium user experience.
 
-## What's next? How do I make an app with this?
+## Tech Stack
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS 4.0](https://tailwindcss.com/)
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/) (built on [Radix UI](https://www.radix-ui.com/))
+- **Charts**: [Recharts](https://recharts.org/en-US/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Package Manager**: [pnpm](https://pnpm.io/)
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Features
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- **Overview Dashboard**: High-level summary of top releases, recent activity, and platform performance.
+- **Releases Tracking**: Detailed view of music releases with streaming stats and growth metrics.
+- **Analytics**: Revenue tracking, listener demographics, and platform breakdown.
+- **Engagement**: Social media tracking for Instagram, TikTok, YouTube, and more.
+- **Responsive Design**: Fully responsive layout optimized for desktop and mobile devices.
 
-## Learn More
+## Getting Started
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+First, install the dependencies:
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+```bash
+pnpm install
+```
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+Then, run the development server:
 
-## How do I deploy this?
+```bash
+pnpm dev
+```
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Project Structure
+
+- `src/app`: Next.js App Router pages and layouts.
+- `src/components`: Reusable UI components (including shadcn/ui).
+- `src/features`: Feature-specific logic and components (Analytics, Engagement, Releases).
+- `src/lib`: Utility functions and configuration.
+- `src/styles`: Global styles and Tailwind configuration.

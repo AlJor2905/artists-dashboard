@@ -82,3 +82,40 @@ formatter={(value: number, name: string, props) => {
 ---
 
 *This document will be updated as the project progresses.*
+
+---
+
+## Session 2: 2026-02-07 - Documentation & Context Alignment
+
+### Context Gathered
+- User requested update to `README.md` and `.agent/AI_and_Decisions_Overview.md`.
+- Confirmed project is running on Next.js 15, Tailwind 4, and pnpm.
+- Verified existing features: Releases, Analytics, Engagement.
+
+### Key Decisions Made
+| Decision | Choice | Rationale |
+|----------|--------|-----------|
+| Documentation | Custom README | Replaced T3 boilerplate to reflect actual project state and tech stack. |
+| Context Tracking | Update AI Log | Ensure future AI sessions have accurate context on the project's evolution. |
+
+### User Decisions (Confirmed)
+| Question | Answer |
+|----------|--------|
+| Structure Update | Keep same structure for logs | User explicitly requested maintaining the detailed log format. |
+
+### Files Updated
+- `README.md`: Added Tech Stack, Getting Started, and Project Description.
+- `.agent/AI_and_Decisions_Overview.md`: Logged this session.
+
+---
+
+## Interaction Log
+
+| Timestamp | Action | Outcome |
+|-----------|--------|---------|
+| 2026-02-07 02:33 | Gathered project context | Analyzed package.json, file structure, and previous log. |
+| 2026-02-07 02:34 | Proposed documentation plan | Created task and implementation plan artifacts. |
+| 2026-02-07 02:34 | User approved plan | Proceeded with execution. |
+| 2026-02-07 02:35 | Updated README.md | Replaced boilerplate with specific project info. |
+| 2026-02-07 02:36 | Updated Overview Log | Appended new session details. |
+
