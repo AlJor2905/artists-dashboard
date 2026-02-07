@@ -262,7 +262,7 @@ export default function AnalyticsPage() {
             <ReleaseMetricsList
                 releases={releaseAnalytics}
                 onSelectRelease={handleSelectRelease}
-                selectedReleaseId={selectedRelease ? selectedRelease : undefined}
+                selectedReleaseId={selectedRelease ?? undefined}
             />
         </div>
     );

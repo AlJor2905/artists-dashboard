@@ -146,7 +146,7 @@ export default function DashboardPage() {
                                     <Image
                                         src={
                                             mockReleases.find((r) => r.id === topRelease.releaseId)
-                                                ?.artwork || ""
+                                                ?.artwork ?? ""
                                         }
                                         alt={topRelease.releaseTitle}
                                         fill
